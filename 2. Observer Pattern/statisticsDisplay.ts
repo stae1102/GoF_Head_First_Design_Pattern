@@ -14,7 +14,8 @@ export class StatisticsDisplay implements Observer, DisplayElement {
     weatherData.registerObserver(this);
   }
 
-  public update(temperature: number, humidify: number, pressure: number) {
+  public update() {
+    const temperature = this.weatherData.getTemperature();
     this.tempSum += temperature;
     this.numReadings++;
 

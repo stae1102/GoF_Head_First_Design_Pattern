@@ -12,13 +12,9 @@ export class ForecastDisplay implements Observer, DisplayElement {
     weatherData.registerObserver(this);
   }
 
-  public update(
-    _temperature: number,
-    _humidity: number,
-    pressure: number
-  ): void {
+  public update(): void {
     this.lastPressure = this.currentPressure;
-    this.currentPressure = pressure;
+    this.currentPressure = this.weatherData.getPressure();
 
     this.display();
   }

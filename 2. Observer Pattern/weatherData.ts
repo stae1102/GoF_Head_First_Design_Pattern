@@ -23,7 +23,7 @@ export class WeatherData implements Subject {
 
   public notifyObservers(): void {
     for (const observer of this.observers) {
-      observer.update(this.temperature, this.humidity, this.pressure);
+      observer.update();
     }
   }
 
@@ -43,7 +43,13 @@ export class WeatherData implements Subject {
     this.measurementsChanged();
   }
 
-  getTemperature() {}
-  getHumidity() {}
-  getPressure() {}
+  getTemperature(): number {
+    return this.temperature;
+  }
+  getHumidity(): number {
+    return this.humidity;
+  }
+  getPressure(): number {
+    return this.pressure;
+  }
 }
