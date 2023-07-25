@@ -25,8 +25,8 @@ export abstract class Duck {
     console.log('모든 오리는 물에 뜹니다. 가짜 오리도 뜨죠.');
   }
 
-  public set setFlyBehavior(value: FlyBehavior) {
-    this.flyBehavior = value;
+  public set setFlyBehavior(fb: FlyBehavior) {
+    this.flyBehavior = fb;
   }
 
   public set setQuackBehavior(qb: QuackBehavior) {

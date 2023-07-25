@@ -1,8 +1,8 @@
-import { Duck } from 'src/duck';
-import { FlyNoWay } from 'src/flyNoWay';
-import { Quack } from 'src/quack';
+import { Duck } from './duck';
+import { FlyNoWay } from './flyNoWay';
+import { Quack } from './quack';
 
-class ModelDuck extends Duck {
+export class ModelDuck extends Duck {
   constructor() {
     super();
     this.flyBehavior = new FlyNoWay();
