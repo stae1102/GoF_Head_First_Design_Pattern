@@ -1,6 +1,7 @@
-import { Observer, Subject } from './weatherStation';
+import { Observer } from './observer';
+import { Subject } from './subject';
 
-class WeatherData implements Subject {
+export class WeatherData implements Subject {
   private observers: Observer[];
   private temperature: number;
   private humidity: number;
