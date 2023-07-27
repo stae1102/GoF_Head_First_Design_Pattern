@@ -1,16 +1,16 @@
 import { Pizza } from './pizza';
 
 export abstract class PizzaStore {
-  public orderPizza(type: string): Pizza {
-    const pizza: Pizza = this.createPizza(type);
+  public orderPizza(type: string): Pizza | null {
+    const pizza: Pizza | null = this.createPizza(type);
 
-    pizza.prepare();
-    pizza.bake();
-    pizza.cut();
-    pizza.box();
+    pizza?.prepare();
+    pizza?.bake();
+    pizza?.cut();
+    pizza?.box();
 
     return pizza;
   }
 
-  abstract createPizza(type: string): Pizza;
+  protected abstract createPizza(type: string): Pizza | null;
 }
