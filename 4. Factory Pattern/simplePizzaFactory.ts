@@ -1,6 +1,12 @@
+import { CheesePizza } from './cheesePizza';
+import { ClamPizza } from './clamPizza';
+import { PepperoniPizza } from './pepperoniPizza';
+import { Pizza } from './pizza';
+import { VeggiePizza } from './veggiePizza';
+
 export class SimplePizzaFactory {
-  public createPizza(type: string) {
-    let pizza: Pizza;
+  public createPizza(type: string): Pizza {
+    let pizza: Pizza = new Object() as Pizza;
 
     if (type === 'cheese') {
       pizza = new CheesePizza();
@@ -11,6 +17,7 @@ export class SimplePizzaFactory {
     } else if (type === 'veggie') {
       pizza = new VeggiePizza();
     }
+
     return pizza;
   }
 }
