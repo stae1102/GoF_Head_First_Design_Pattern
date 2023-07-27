@@ -1,5 +1,9 @@
 import { Pizza } from '../pizza';
 import { PizzaStore } from '../pizzaStore';
+import { ChicagoStyleCheesePizza } from './chicagoStyleCheesePizza';
+import { ChicagoStyleVeggiePizza } from './chicagoStyleVeggiePizza';
+import { ChicagoStyleClamPizza } from './chicagoStyleClamPizza';
+import { ChicagoStylePepperoniPizza } from './chicagoStylePepperoniPizza';
 
 export class ChicagoPizzaStore extends PizzaStore {
   public createPizza(type: string): Pizza | null {

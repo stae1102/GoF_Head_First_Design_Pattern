@@ -9,7 +9,11 @@ export abstract class Pizza {
   }
 
   public prepare(): void {
-    console.log(`Preparing ${this.name}`);
+    console.log(`준비 중: ${this.getName()}`);
+    console.log('도우를 돌리는 중...');
+    console.log('소스를 뿌리는 중...');
+    console.log('토핑을 올리는 중: ');
+    console.log(...this.toppings);
   }
 
   public bake(): void {
@@ -22,17 +26,5 @@ export abstract class Pizza {
 
   public box(): void {
     console.log(`Boxing ${this.name}`);
-  }
-
-  public toString(): string {
-    // code to display pizza name and ingredients
-    let display = '';
-    display += `---- ${this.name} ----\n`;
-    display += `${this.dough}\n`;
-    display += `${this.sauce}\n`;
-    for (const topping of this.toppings) {
-      display += `${topping}\n`;
-    }
-    return display;
   }
 }

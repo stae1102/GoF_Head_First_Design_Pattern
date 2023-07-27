@@ -1,6 +1,6 @@
 import { Pizza } from '../pizza';
 
-export class NYStyleVeggiePizza extends Pizza {
+export class ChicagoStyleVeggiePizza extends Pizza {
   constructor() {
     super();
     this.name = 'Chicago Deep Dish Veggie Pizza';
