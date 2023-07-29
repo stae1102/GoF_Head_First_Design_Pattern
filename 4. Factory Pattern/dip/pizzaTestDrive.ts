@@ -1,6 +1,11 @@
+import { ChicagoPizzaStore } from './chicagoPizzaStore';
 import { NYPizzaStore } from './nyPizzaStore';
 import { PizzaStore } from './pizzaStore';
 
-const pizzaStore: PizzaStore = new NYPizzaStore();
+const nyPizzaStore: PizzaStore = new NYPizzaStore();
 
-pizzaStore.orderPizza('cheese');
+nyPizzaStore.orderPizza('cheese');
+
+const chicagoPizzaStore: PizzaStore = new ChicagoPizzaStore();
+
+chicagoPizzaStore.orderPizza('cheese');
