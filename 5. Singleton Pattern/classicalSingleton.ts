@@ -1,12 +1,9 @@
 export class Singleton {
-  private static uniqueInstance: Singleton | null = null;
+  private static uniqueInstance: Singleton = new Singleton();
 
   private constructor() {}
 
   public static getInstance(): Singleton {
-    if (this.uniqueInstance === null) {
-      this.uniqueInstance = new Singleton();
-    }
     return this.uniqueInstance;
   }
 }
