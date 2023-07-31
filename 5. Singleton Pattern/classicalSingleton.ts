@@ -1,5 +1,5 @@
 export class Singleton {
-  private static uniqueInstance: Singleton;
+  private static uniqueInstance: Singleton | null = null;
 
   private constructor() {}
 
