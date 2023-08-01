@@ -14,7 +14,7 @@ export class MacroCommand implements Command {
   }
 
   public undo(): void {
-    for (let i = 0; i < this.commands.length; i++) {
+    for (let i = this.commands.length - 1; i >= 0; i--) {
       this.commands[i].undo();
     }
   }
