@@ -43,7 +43,7 @@ export class StreamingPlayer {
 
   public stop(): void {
     this.currentChapter = 0;
-    console.log(`${this.description} ${this.movie} 영화를 정지했습니다.}`);
+    console.log(`${this.description} ${this.movie} 영화를 정지했습니다.`);
   }
 
   public pause(): void {

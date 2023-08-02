@@ -36,7 +36,7 @@ export class HomeTheaterFacade {
   public endMovie(): void {
     console.log('홈 시어터를 끄는 중');
     this.popper.off();
-    this.lights.on();
+    this.lights.off();
     this.screen.up();
     this.projector.off();
     this.amp.off();
