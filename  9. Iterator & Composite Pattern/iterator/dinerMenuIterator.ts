@@ -18,7 +18,7 @@ export class DinerMenuIterator implements Iterator {
   public hasNext(): boolean {
     if (
       this.position >= this.items.length ||
-      this.items[this.position] === null
+      this.items[this.position] === undefined
     ) {
       return false;
     }
