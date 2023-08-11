@@ -82,12 +82,13 @@ export class GumballMachine {
   }
 
   toString(): void {
+    console.log('\n주식회사 왕뽑기');
     console.log('타입스크립트로 돌아가는 최신형 뽑기 기계');
     console.log(`남은 개수: ${this.count}개`);
     if (this.count === 0) {
-      console.log('매진');
+      console.log('매진\n');
     } else {
-      console.log('동전 투입 대기중');
+      console.log('동전 투입 대기중\n');
     }
   }
 }
