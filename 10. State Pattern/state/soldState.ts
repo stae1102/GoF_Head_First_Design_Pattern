@@ -25,6 +25,7 @@ export class SoldState implements State {
     if (this.gumballMachine.getCount() > 0) {
       this.gumballMachine.setState(this.gumballMachine.getNoQuarterState());
     } else {
+      console.log('매진되었습니다!');
       this.gumballMachine.setState(this.gumballMachine.getSoldOutState());
     }
   }
