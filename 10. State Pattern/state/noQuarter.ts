@@ -1,7 +1,7 @@
 import { GumballMachine } from './gumbleMachine';
 import { State } from './state';
 
-export class NoQuarter implements State {
+export class NoQuarterState implements State {
   gumballMachine: GumballMachine;
 
   constructor(gumballMachine: GumballMachine) {
