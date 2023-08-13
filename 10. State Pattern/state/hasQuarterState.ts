@@ -2,6 +2,7 @@ import { GumballMachine } from './gumbleMachine';
 import { State } from './state';
 
 export class HasQuarterState implements State {
+  randomWinner: number = Math.floor(Math.random() * 10);
   gumballMachine: GumballMachine;
 
   constructor(gumballMachine: GumballMachine) {
@@ -19,7 +20,12 @@ export class HasQuarterState implements State {
 
   turnCrank(): void {
     console.log('손잡이를 돌리셨습니다.');
-    this.gumballMachine.setState(this.gumballMachine.getSoldState());
+    const winner: boolean = this.randomWinner === 1;
+    if (winner && this.gumballMachine.getCount() > 1) {
+      this.gumballMachine.setState(this.gumballMachine.getWinnerState());
+    } else {
+      this.gumballMachine.setState(this.gumballMachine.getSoldState());
+    }
   }
 
   dispense(): void {
