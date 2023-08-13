@@ -94,6 +94,13 @@ export class GumballMachine {
     }
   }
 
+  releaseBall() {
+    console.log('알맹이를 내보내고 있습니다.');
+    if (this.count > 0) {
+      this.count--;
+    }
+  }
+
   setState(state: State) {
     this.state = state;
   }
@@ -112,5 +119,9 @@ export class GumballMachine {
 
   getSoldOutState() {
     return GumballMachine.soldOutState;
+  }
+
+  getCount() {
+    return this.count;
   }
 }
