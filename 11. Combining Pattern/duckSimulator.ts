@@ -1,23 +1,22 @@
-import { DuckCall } from './duckCall';
+import { AbstractDuckFactory } from './abstractDuckfactory';
+import { CountingDuckFactory } from './countingDuckFactory';
 import { Goose } from './goose';
 import { GooseAdapter } from './gooseAdapter';
-import { MallardDuck } from './mallardDuck';
 import { QuackCounter } from './quackCounter';
 import { Quackable } from './quackable';
-import { RedheadDuck } from './redheadDuck';
-import { RubberDuck } from './rubberDuck';
 
 class DuckSimulator {
   public static main(...args: string[]) {
     const simulator: DuckSimulator = new DuckSimulator();
-    simulator.simulate();
+    const duckFactory: AbstractDuckFactory = new CountingDuckFactory();
+    simulator.simulate(duckFactory);
   }
 
-  simulate(): void {
-    const mallardDuck: Quackable = new QuackCounter(new MallardDuck());
-    const redheadDuck: Quackable = new QuackCounter(new RedheadDuck());
-    const duckCall: Quackable = new QuackCounter(new DuckCall());
-    const rubberDuck: Quackable = new QuackCounter(new RubberDuck());
+  simulate(duckFactory: AbstractDuckFactory): void {
+    const mallardDuck: Quackable = duckFactory.createMallardDuck();
+    const redheadDuck: Quackable = duckFactory.createRedheadDuck();
+    const duckCall: Quackable = duckFactory.createDuckCall();
+    const rubberDuck: Quackable = duckFactory.createRubberDuck();
     const gooseDuck: Quackable = new GooseAdapter(new Goose());
 
     console.log('오리 시뮬레이션 게임');
