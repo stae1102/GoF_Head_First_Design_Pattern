@@ -4,7 +4,7 @@ import { GooseAdapter } from './gooseAdapter';
 import { MallardDuck } from './mallardDuck';
 import { QuackCounter } from './quackCounter';
 import { Quackable } from './quackable';
-import { RedHeadDuck } from './redheadDuck';
+import { RedheadDuck } from './redheadDuck';
 import { RubberDuck } from './rubberDuck';
 
 class DuckSimulator {
@@ -15,7 +15,7 @@ class DuckSimulator {
 
   simulate(): void {
     const mallardDuck: Quackable = new QuackCounter(new MallardDuck());
-    const redheadDuck: Quackable = new QuackCounter(new RedHeadDuck());
+    const redheadDuck: Quackable = new QuackCounter(new RedheadDuck());
     const duckCall: Quackable = new QuackCounter(new DuckCall());
     const rubberDuck: Quackable = new QuackCounter(new RubberDuck());
     const gooseDuck: Quackable = new GooseAdapter(new Goose());

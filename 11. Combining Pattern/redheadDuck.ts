@@ -1,6 +1,6 @@
 import { Quackable } from './quackable';
 
-export class RedHeadDuck implements Quackable {
+export class RedheadDuck implements Quackable {
   public quack(): void {
     console.log('꽥꽥');
   }
