@@ -2,6 +2,7 @@ import { DuckCall } from './duckCall';
 import { Goose } from './goose';
 import { GooseAdapter } from './gooseAdapter';
 import { MallardDuck } from './mallardDuck';
+import { QuackCounter } from './quackCounter';
 import { Quackable } from './quackable';
 import { RedHeadDuck } from './redheadDuck';
 import { RubberDuck } from './rubberDuck';
@@ -13,10 +14,10 @@ class DuckSimulator {
   }
 
   simulate(): void {
-    const mallardDuck: Quackable = new MallardDuck();
-    const redheadDuck: Quackable = new RedHeadDuck();
-    const duckCall: Quackable = new DuckCall();
-    const rubberDuck: Quackable = new RubberDuck();
+    const mallardDuck: Quackable = new QuackCounter(new MallardDuck());
+    const redheadDuck: Quackable = new QuackCounter(new RedHeadDuck());
+    const duckCall: Quackable = new QuackCounter(new DuckCall());
+    const rubberDuck: Quackable = new QuackCounter(new RubberDuck());
     const gooseDuck: Quackable = new GooseAdapter(new Goose());
 
     console.log('오리 시뮬레이션 게임');
@@ -26,6 +27,8 @@ class DuckSimulator {
     this._simulate(duckCall);
     this._simulate(rubberDuck);
     this._simulate(gooseDuck);
+
+    console.log(`오리가 소리 낸 횟수: ${QuackCounter.getQuacks()} 번`);
   }
 
   _simulate(duck: Quackable): void {
