@@ -1,4 +1,6 @@
 import { DuckCall } from './duckCall';
+import { Goose } from './goose';
+import { GooseAdapter } from './gooseAdapter';
 import { MallardDuck } from './mallardDuck';
 import { Quackable } from './quackable';
 import { RedHeadDuck } from './redheadDuck';
@@ -15,6 +17,7 @@ class DuckSimulator {
     const redheadDuck: Quackable = new RedHeadDuck();
     const duckCall: Quackable = new DuckCall();
     const rubberDuck: Quackable = new RubberDuck();
+    const gooseDuck: Quackable = new GooseAdapter(new Goose());
 
     console.log('오리 시뮬레이션 게임');
 
@@ -22,6 +25,7 @@ class DuckSimulator {
     this._simulate(redheadDuck);
     this._simulate(duckCall);
     this._simulate(rubberDuck);
+    this._simulate(gooseDuck);
   }
 
   _simulate(duck: Quackable): void {
